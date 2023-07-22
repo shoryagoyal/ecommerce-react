@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Product from "./Product";
 import "./App.css";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -21,20 +22,22 @@ const Home = () => {
         <div className="flex flex-wrap">
           {Array(10)
             .fill("")
-            .map((e) => (
-              <Shimmer />
+            .map((e, index) => (
+              <Shimmer key={index} />
             ))}
         </div>
       ) : (
         <div className="flex flex-wrap flex-1">
           {products.map((singleProduct) => (
-            <Product
-              price={singleProduct.price}
-              rating={singleProduct.rating}
-              imageSrc={singleProduct.image}
-              key={singleProduct.id}
-              title={singleProduct.title}
-            />
+            <Link to={`/product/${singleProduct.id}`}>
+              <Product
+                price={singleProduct.price}
+                rating={singleProduct.rating}
+                imageSrc={singleProduct.image}
+                key={singleProduct.id}
+                title={singleProduct.title}
+              />
+            </Link>
           ))}
         </div>
       )}
