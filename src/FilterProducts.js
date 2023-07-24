@@ -55,6 +55,40 @@ const FilterProducts = () => {
           <label for="4-5">4-5</label>
         </div>
       </div>
+      <div>
+        <div>Categories</div>
+        <div>
+          <input type="checkbox" name="rating" value="jewelery" id="jewelery" />
+          <label for="jewelery">Jewelery</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="rating"
+            value="electronics"
+            id="electronics"
+          />
+          <label for="electronics">Electronics</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="rating"
+            value="mensClothing"
+            id="mensClothing"
+          />
+          <label for="mensClothing">men's clothing</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="rating"
+            value="womensClothing"
+            id="womensClothing"
+          />
+          <label for="womensClothing">women's clothing</label>
+        </div>
+      </div>
       <button className="border border-black p-2 my-2 rounded-md bg-gray-400">
         Apply filter
       </button>
